@@ -1,0 +1,22 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* opacity가 0에서 1로 바뀐다는것을 뜻하는 animation임. */
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* chrome에서는 -webkit을 사용하기에 -keyframse앞에 -webkit을 넣어줌.
+opacity가 0에서 1로 바뀐다는것을 뜻하는 animation임. */
+
+@-webkit-keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
