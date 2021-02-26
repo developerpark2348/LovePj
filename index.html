@@ -2,20 +2,43 @@
 <html lang="kr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="section">
-        <section id="main">
-            <h3>십이간지로 알아보는 연애유형</h3>
-            <img src="./img/main.png" alt="mainImage">
+    <div class="container">
+        <section id="main" class="mx-auto mt-5 py-5 px-3">
+        <!--
+        mx-auto bootstrap의 마진 클래스로 m은 마진 p는 패딩 x는 x축 y는 y축이다.ex) mx-auto x축을 margin auto로.. margin상세 https://getbootstrap.com/docs/5.0/utilities/spacing/#margin-and-padding
+        mt-5란 margin-top 5번째 bootstrap의 margin크기를 뜻함. 
+        -->
+            <h1>십이간지로 알아보는 연애유형</h1>
+            <!--
+            pt-5란 padding-top 5번째 bootstrap의 padding크기를 뜻함.
+            -->
+            <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+            <!--
+            col-lg-6 : lg일때 col-6을 줘라, col-md-8 : 크기가 md일때 col-8을줘라
+            등등의 grid옵션임. grid상세 https://getbootstrap.com/docs/5.0/layout/grid/
+            -->
+                <img class="img-fluid" src="./img/main.png" alt="mainImage">
+                <!--
+                class="img-fluid"란 자신이 속해있는 div의 크기값에 맞춰 img가 저장된다는 bootstrap문법
+                -->
+            </div>
+            <!--
+            col-6란 해당 컨테이너의 x축과 y축을 12개로 나눔 즉 100/12 col-6란 콘테이너 내의 열 6개만큼의 크기 즉 절반을 가져간다는 의미. grid상세 https://getbootstrap.com/docs/5.0/layout/grid/
+            -->
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis nisi ea accusantium blanditiis voluptatum necessitatibus, natus aliquam cupiditate, laboriosam dignissimos reprehenderit at dolores assumenda velit cumque exercitationem cum quod officia debitis consequatur consequuntur deserunt expedita. Hic exercitationem aut ea inventore nam cumque voluptates nisi praesentium optio esse? Quo ipsa dignissimos id et voluptatem rem quibusdam placeat? Nostrum quo vel modi facere nihil quae dignissimos, aspernatur tenetur deserunt officiis autem dolorum perferendis facilis ad quam sint nemo. Odio assumenda architecto dolor ad est doloremque quo magnam illum fugiat iusto, soluta quam dignissimos aperiam eos cum atque nulla expedita iste quidem enim?
+                나만의 MBTI 사이트입니다! <br>
+                아래 시작하기 버튼을 눌러 시작해주세요!
             </p>
-            <button type="button" class="btn btn-danger">시작하기</button>
+            <button type="button" class="btn btn-danger mt-3">시작하기</button>
         </section>
         <section id="qna">
 
