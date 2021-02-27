@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/qna.css">
     <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/result.css">
     <title>Document</title>
 </head>
 <body>
     <div class="container">
-        <section id="main" class="mx-auto mt-5 py-5 px-3">
+        <section id="main" class="mx-auto my-5 py-5 px-3">
         <!--
         mx-auto bootstrap의 마진 클래스로 m은 마진 p는 패딩 x는 x축 y는 y축이다.ex) mx-auto x축을 margin auto로.. margin상세 https://getbootstrap.com/docs/5.0/utilities/spacing/#margin-and-padding
         mt-5란 margin-top 5번째 bootstrap의 margin크기를 뜻함. 
@@ -56,7 +57,19 @@
             </div>
         </section>
         <section id="result">
+            <h1>당신의 결과는?</h1>
+            <div class="resultname">
 
+            </div>
+            <div class="resultDesc">
+
+            </div>
+            <div id="resultImg" class="col-lg-6 col-md-8 col-sm-10 col-mx-auto">
+
+            </div>
+            <button type="button">
+                공유하기
+            </button>
         </section>
         <script src="./js/data.js" charset="utf-8"></script>
         <script src="./js/start.js" charset="utf-8"></script>

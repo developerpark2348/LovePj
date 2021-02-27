@@ -1,8 +1,46 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
+const result = document.querySelector("#result");
 const endPoint = 12;
+const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-function addAnswer(answerText, qIdx){
+function calResult() {
+    var result = select.indexOf(Math.max(...select));
+    return result
+}
+
+function setResult(){
+    let point = calResult();
+    const resultName = document.querySelector('.resultname');
+    resultName.innerHTML = infoList[point].name;
+
+    var resultImg = document.createElement('img');
+    const imgDiv = document.querySelector('#resultImg');
+    var imgURL = 'img/image-' + point + '.png';
+    resultImg.src = imgURL;
+    resultImg.alt = point;
+    resultImg.classList.add('img-fluid');
+    imgDiv.appendChild(resultImg);
+
+    const resultDesc = document.querySelector('.resultDesc');
+    resultDesc.innerHTML = infoList[point].desc;
+}
+
+function goResult() {
+    qna.style.WebkitAnimation = "fadeOut 1s";
+    qna.style.animation = "fadeOut 1s";
+    setTimeout(() => {
+        result.style.WebkitAnimation = "fadeIn 1s";
+        result.style.animation = "fadeIn 1s";
+        setTimeout(() => {
+            qna.style.display = "none";
+            result.style.display = "block";
+        }, 450)})
+    
+    calResult();
+}
+
+function addAnswer(answerText, qIdx, idx) {
     var a = document.querySelector('.answerBox'); //변수a에 .answerBox를 담음.
     var answer = document.createElement('button'); //button을 만드는 변수 answer
     answer.classList.add('answerList'); //answer에 'answerList'클래스를 부여함.
@@ -14,14 +52,19 @@ function addAnswer(answerText, qIdx){
     a.appendChild(answer); //변수a 즉, .answerBox라는 div태그내에 자식으로 answer(button을 만드는 변수)를 넣는다.
     answer.innerHTML = answerText;
 
-    answer.addEventListener("click", function(){
+    answer.addEventListener("click", function() {
         var children = document.querySelectorAll(".answerList");
-        for(let i = 0; i < children.length; i++){
+        for(let i = 0; i < children.length; i++) {
             children[i].disabled = true;
             children[i].style.WebkitAnimation = 'fadeOut 0.5s';
             children[i].style.animation = 'fadeOut 0.5s';
         }
         setTimeout(()=>{
+            var target = qnaList[qIdx].a[idx].type;
+            for(let i = 0; i < target.length; i++){
+                select[target[i]] += 1;
+            }
+            
             for(let i = 0; i < children.length; i++){
                 children[i].style.display = 'none';
             }
@@ -31,10 +74,15 @@ function addAnswer(answerText, qIdx){
 }
 
 function goNext(qIdx) {
+    if(qIdx === endPoint){
+        goResult();
+        return;
+    }
+
     var q = document.querySelector('.qBox');
     q.innerHTML = qnaList[qIdx].q;
     for(let i in qnaList[qIdx].a){ //i라는 변수를 만든후 qnaList[qIdx].a의 수만큼 반복하는 반복문을 뜻함.
-        addAnswer(qnaList[qIdx].a[i].answer, qIdx);
+        addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
     }
     var status = document.querySelector('.statusBar');
     status.style.width = (100/endPoint) * (qIdx + 1) + '%';
