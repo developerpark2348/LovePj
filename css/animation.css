@@ -20,3 +20,15 @@ opacity가 0에서 1로 바뀐다는것을 뜻하는 animation임. */
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
+.fadeIn{
+    animation: fadeIn;
+    animation-duration: 0.5s;
+}
+/* fadeIn이란 클래스를 보유시 animation에 fadeIn을 부여하고, 1s의 지속시간을 가진다 */
+
+.fadeOut{
+    animation: fadeOut;
+    animation-duration: 0.5s;
+}
+/* fadeOut이란 클래스를 보유시 animation에 fadeIn을 부여하고, 1s의 지속시간을 가진다 */
