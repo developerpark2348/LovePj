@@ -18,7 +18,7 @@ function kakaoShare(){
             imageUrl: ShareImage,
             link: {
                 mobileWebUrl: shareURL,
-                WebUrl: shareURL
+                webUrl: shareURL
             },
         },
         buttons: [
@@ -26,7 +26,7 @@ function kakaoShare(){
             title: '결과 확인하기',
             link: {
             mobileWebUrl: shareURL,
-            WebUrl: shareURL
+            webUrl: shareURL
             },
         },
         ]
