@@ -13,7 +13,7 @@ function setShare(){
         content: {
             title: shareTitle,
             description: shareDes,
-            imageUrl: ShareImage,
+            imageUrl: shareImage,
             link: {
                 mobileWebUrl: shareURL,
                 webUrl: shareURL
