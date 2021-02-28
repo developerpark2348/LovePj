@@ -13,7 +13,6 @@ function setResult(){
     let point = calResult();
     const resultName = document.querySelector('.resultname');
     resultName.innerHTML = infoList[point].name;
-
     var resultImg = document.createElement('img');
     const imgDiv = document.querySelector('#resultImg');
     var imgURL = 'img/image-' + point + '.png';
@@ -36,8 +35,7 @@ function goResult() {
             qna.style.display = "none";
             result.style.display = "block";
         }, 450)})
-    
-    calResult();
+    setResult();
 }
 
 function addAnswer(answerText, qIdx, idx) {
